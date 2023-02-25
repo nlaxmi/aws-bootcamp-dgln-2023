@@ -40,6 +40,14 @@ f) created budgets ( attached screenshot below)
 [Lucid Charts Share Link](https://lucid.app/lucidchart/03cd625d-92d8-4e44-a83b-ce711086a3e2/edit?viewport_loc=-3442%2C-932%2C4039%2C2211%2C0_0&invitationId=inv_c6fd0306-c875-4103-9d75-8bf0372bfc45)
 
 
+## Cruddur Conceptual Diagram
+
+![Crudder Conceptual Diagram](assets/week0-cruddur.png)
+
+## Cruddur Lucid Chart Link
+
+[Cruddur Lucid Chart Link](https://lucid.app/lucidchart/8af4036c-8995-4659-b0f8-ec970c3d3a1e/edit?viewport_loc=-2189%2C-696%2C2994%2C1639%2C0_0&invitationId=inv_5d5fbed6-9009-465f-98fe-e1313a158c77)
+
 ## Billing Related Checks
 
 ![cost_tag1](assets/week0-cost-tags-1.png)
