@@ -52,3 +52,12 @@ f) created budgets ( attached screenshot below)
 ![Cruddur Napkin Design](assets/week0-napkin_design.jpeg)
 
 
+## Created Few SCP's (SCP - Service Control Policies) in my AWS Account
+
+![SCP](assets/week0-scp.png)
+
+[SCP Policies From Ashish's Repo](https://github.com/hashishrajan/aws-scp-best-practice-policies/tree/main/AWS%20SCP%20Policies)
+
+## Organizations
+
+![Organisations](assets/week0-org.png)
