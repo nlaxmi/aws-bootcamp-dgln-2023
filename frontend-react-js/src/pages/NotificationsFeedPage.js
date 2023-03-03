@@ -11,17 +11,11 @@ import ReplyForm from '../components/ReplyForm';
 import Cookies from 'js-cookie'
 
 export default function HomeFeedPage() {
-    const [activities,
-        setActivities] = React.useState([]);
-    const [popped,
-        setPopped] = React.useState(false);
-    const [poppedReply,
-        setPoppedReply] = React.useState(false);
-
-    const [replyActivity,
-        setReplyActivity] = React.useState({});
-    const [user,
-        setUser] = React.useState(null);
+    const [activities, setActivities] = React.useState([]);
+    const [popped, setPopped] = React.useState(false);
+    const [poppedReply, setPoppedReply] = React.useState(false);
+    const [replyActivity, setReplyActivity] = React.useState({});
+    const [user, setUser] = React.useState(null);
     const dataFetchedRef = React.useRef(false);
 
     const loadData = async () => {
@@ -31,35 +25,26 @@ export default function HomeFeedPage() {
                 method: "GET"
             });
             let resJson = await res.json();
-
             if (res.status === 200) {
                 setActivities(resJson)
-            }
-
-            else {
+            } else {
                 console.log(res)
             }
-        }
-
-        catch (err) {
+        } catch (err) {
             console.log(err);
         }
-    }
-
-        ;
+    };
 
     const checkAuth = async () => {
-        console.log('checkAuth') // [TODO] Authenication
-
+        console.log('checkAuth')
+        // [TODO] Authenication
         if (Cookies.get('user.logged_in')) {
             setUser({
                 display_name: Cookies.get('user.name'),
                 handle: Cookies.get('user.username')
             })
         }
-    }
-
-        ;
+    };
 
     React.useEffect(() => {
         //prevents double call
@@ -68,68 +53,32 @@ export default function HomeFeedPage() {
 
         loadData();
         checkAuth();
-    }
+    }, [])
 
-        , []) return (<article> <DesktopNavigation user={
-            user
-        }
-
-            active={
-                'home'
-            }
-
-            setPopped={
-                setPopped
-            }
-
-        /> <div className='content' > <ActivityForm popped={
-            popped
-        }
-
-            setPopped={
-                setPopped
-            }
-
-            setActivities={
-                setActivities
-            }
-
-        /> <ReplyForm activity={
-            replyActivity
-        }
-
-            popped={
-                poppedReply
-            }
-
-            setPopped={
-                setPoppedReply
-            }
-
-            setActivities={
-                setActivities
-            }
-
-            activities={
-                activities
-            }
-
-                /> <ActivityFeed title="Home"
-                    setReplyActivity={
-                        setReplyActivity
-                    }
-
-                    setPopped={
-                        setPoppedReply
-                    }
-
-                    activities={
-                        activities
-                    }
-
-                /> </div> <DesktopSidebar user={
-                    user
-                }
-
-            /> </article>);
+    return (
+        <article>
+            <DesktopNavigation user={user} active={'home'} setPopped={setPopped} />
+            <div className='content'>
+                <ActivityForm
+                    popped={popped}
+                    setPopped={setPopped}
+                    setActivities={setActivities}
+                />
+                <ReplyForm
+                    activity={replyActivity}
+                    popped={poppedReply}
+                    setPopped={setPoppedReply}
+                    setActivities={setActivities}
+                    activities={activities}
+                />
+                <ActivityFeed
+                    title="Home"
+                    setReplyActivity={setReplyActivity}
+                    setPopped={setPoppedReply}
+                    activities={activities}
+                />
+            </div>
+            <DesktopSidebar user={user} />
+        </article>
+    );
 }
