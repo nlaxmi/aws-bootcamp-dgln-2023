@@ -26,7 +26,8 @@ export default function HomeFeedPage() {
 
     const loadData = async () => {
         try {
-            const backend_url = `${process.env.REACT_APP_BACKEND_URL}/api/activities/notifications` const res = await fetch(backend_url, {
+            const backend_url = `${process.env.REACT_APP_BACKEND_URL}/api/activities/notifications`
+            const res = await fetch(backend_url, {
                 method: "GET"
             });
             let resJson = await res.json();
